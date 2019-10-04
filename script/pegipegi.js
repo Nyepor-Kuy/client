@@ -79,6 +79,7 @@ function flight(data) {
   }
 }
 
+
 function event(data) {
   for (let i = 0; i < 3; i++) {
     let dateStart = new Date(data.events[i].start.local).toLocaleDateString()
