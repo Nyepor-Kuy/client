@@ -22,7 +22,7 @@ function pegipegi() {
       $('.weather').empty()
       $('#price-box').empty()
       console.log(response)
-      weather(response.weather.hours[0], response.flight.Places[1].CityName)
+      weather(response.weather.hours[0], to)
       flight(response.flight)
       event(response.event)
       Swal.close()
@@ -75,9 +75,12 @@ function flight(data) {
       </div>
     </div>
   `)
-function event( data ){
+  }
+}
 
-  for(let i = 0; i < 3; i++){
+function event(data) {
+
+  for (let i = 0; i < 3; i++) {
     let dateStart = new Date(data.events[i].start.local).toLocaleDateString()
     let dateEnd = new Date(data.events[i].end.local).toLocaleDateString()
     $('.event').append(`
