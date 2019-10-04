@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id"
+        content="225874358535-a8792ake5si2rg8bblgq2l8je3cv5a30.apps.googleusercontent.com">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,13 +15,13 @@
 
 <body>
     <!-- landing page -->
-    <div class="landingPage">
+    <div class="landingPage" style="display: none">
         <div class="logo">
             <h1>PEGIPEGI</h1>
             <h1>K U Y</h1>
         </div>
         <div class="account">
-            <div class="register-box">
+            <div class="register-box" style="display: none">
                 <h1>Sign Up</h1>
                 <form>
                     <div class="input">
@@ -35,9 +37,10 @@
                     </div>
                     <input type="submit" value="Register">
                 </form>
+                <p>Already have an PEGIPEGI KUY Account? Sign In <a href="#" id="toLogin">here</a></p>
             </div>
 
-            <div class="login-box" style="display: none">
+            <div class="login-box">
                 <h1>Sign In</h1>
                 <form>
                     <div class="input">
@@ -48,7 +51,73 @@
                         <input type="text" placeholder="Password">
                     </div>
                     <input type="submit" value="Sign In">
+                    <p>Don't have an PEGIPEGI KUY Account? Create <a href="#" id="toRegister">here</a></p>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div class="main">
+        <div class="nav">
+            <img src="src/logo.png" alt="Logo">
+            <div>
+                <a href="#" onclick="signOut()">Sign out</a>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="weather">
+
+            </div>
+
+            <div class="flight">
+                <h1>Lowest Flight Fare</h1>
+                <form>
+                    <div class="from">
+                        <label>FROM : </label>
+                        <select id="from">
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Yogyakarta">Yogyakarta</option>
+                            <option value="Medan">Medan</option>
+                            <option value="Palembang">Palembang</option>
+                            <option value="Lampung">Lampung</option>
+                            <option value="Makassar">Makassar</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Bandung">Bali</option>
+                            <option value="Semarang">Semarang</option>
+                        </select>
+                    </div>
+
+                    <div class="to">
+                        <label>TO : </label>
+                        <select id="to">
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Yogyakarta">Yogyakarta</option>
+                            <option value="Medan">Medan</option>
+                            <option value="Palembang">Palembang</option>
+                            <option value="Lampung">Lampung</option>
+                            <option value="Makassar">Makassar</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Bandung">Bali</option>
+                            <option value="Semarang">Semarang</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Departure Date</label>
+                        <input type="date">
+                    </div>
+
+                    <input type="submit" value="Search Flight">
+                </form>
+            </div>
+
+            <div class="event">
+
             </div>
         </div>
     </div>
@@ -59,7 +128,21 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5cd1e1d933.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="script/script.js"></script>
+    <script src="script/landingPage.js"></script>
+    <script src="script/login.js"></script>
+    <script>
+        function signOut() {
+            if (gapi.auth2) {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+            console.log('User signed out.');
+        }
+    </script>
 </body>
 
 </html>
