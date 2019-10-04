@@ -72,46 +72,56 @@
             </div>
 
             <div class="flight">
-                <h1>Lowest Flight Fare</h1>
-                <form>
-                    <div class="from">
-                        <label>FROM : </label>
-                        <select id="from">
-                            <option value="Jakarta">Jakarta</option>
-                            <option value="Surabaya">Surabaya</option>
-                            <option value="Yogyakarta">Yogyakarta</option>
-                            <option value="Medan">Medan</option>
-                            <option value="Palembang">Palembang</option>
-                            <option value="Lampung">Lampung</option>
-                            <option value="Makassar">Makassar</option>
-                            <option value="Bandung">Bandung</option>
-                            <option value="Bandung">Bali</option>
-                            <option value="Semarang">Semarang</option>
-                        </select>
-                    </div>
+                <h1>Find Flights</h1>
+                <form class="m-2">
+                    <div class="row m-2">
 
-                    <div class="to">
-                        <label>TO : </label>
-                        <select id="to">
-                            <option value="Jakarta">Jakarta</option>
-                            <option value="Surabaya">Surabaya</option>
-                            <option value="Yogyakarta">Yogyakarta</option>
-                            <option value="Medan">Medan</option>
-                            <option value="Palembang">Palembang</option>
-                            <option value="Lampung">Lampung</option>
-                            <option value="Makassar">Makassar</option>
-                            <option value="Bandung">Bandung</option>
-                            <option value="Bandung">Bali</option>
-                            <option value="Semarang">Semarang</option>
-                        </select>
+                        <div class="col">
+                            <div class="from form-group">
+                                <label>FROM</label>
+                                <select id="from" class="form-control form-control-lg">
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                    <option value="Medan">Medan</option>
+                                    <option value="Palembang">Palembang</option>
+                                    <option value="Lampung">Lampung</option>
+                                    <option value="Makassar">Makassar</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Bandung">Bali</option>
+                                    <option value="Semarang">Semarang</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="to">
+                                <label>TO</label>
+                                <select id="to" class="form-control form-control-lg">
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                    <option value="Medan">Medan</option>
+                                    <option value="Palembang">Palembang</option>
+                                    <option value="Lampung">Lampung</option>
+                                    <option value="Makassar">Makassar</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Bandung">Bali</option>
+                                    <option value="Semarang">Semarang</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-
-                    <div>
-                        <label>Departure Date</label>
-                        <input type="date" id="date">
+                    <div class="row m-2">
+                        <div class="col">
+                            <label>Departure Date</label>
+                            <input type="date" id="date" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>Kuy Travelling!</label>
+                            <input type="submit" class="btn btn-primary m-1" id="btn-submit-flight"
+                                value="Search Flight"></input>
+                        </div>
                     </div>
-
-                    <input type="submit" value="Search Flight" id="btn-submit-flight">
                 </form>
 
                 <div id="price-box">
@@ -121,7 +131,7 @@
             </div>
 
             <div class="event">
-                <h1>Events In Your Destination</h1>
+                <h1>Events</h1>
             </div>
         </div>
 
