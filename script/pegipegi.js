@@ -24,6 +24,7 @@ function pegipegi() {
       console.log(response)
       weather(response.weather.hours[0], response.flight.Places[1].CityName)
       flight(response.flight)
+      event(response.event)
       Swal.close()
     })
     .fail((err) => {
@@ -74,5 +75,33 @@ function flight(data) {
       </div>
     </div>
   `)
+function event( data ){
+
+  for(let i = 0; i < 3; i++){
+    let dateStart = new Date(data.events[i].start.local).toLocaleDateString()
+    let dateEnd = new Date(data.events[i].end.local).toLocaleDateString()
+    $('.event').append(`
+        <div class="card m-3">
+          <img id="event-img" class="card-img-top"
+              src="${data.events[i].logo.original.url}"
+              alt="Card image cap">
+          <div class="card-body">
+            <div id="header">
+                <h5 class="card-title">${data.events[i].name.text}</h5>
+            </div>
+            <div id="body">
+                <p class="card-text">${data.events[i].summary}</p>
+            </div>
+            <div id="date" class="my-2">
+                <small class="text-muted"><i class="fas fa-calendar-alt"></i> Start: ${dateStart}</small>
+                <small class="text-muted"><i class="fas fa-calendar-alt"></i> End: ${dateEnd}</small>
+            </div>
+            <div id="footer" class="mt-3">
+                <a href="${data.events[i].url}"
+                    class="btn btn-primary">Books Your Tickets</a>
+            </div>
+          </div>
+        </div>
+    `)
   }
 }
