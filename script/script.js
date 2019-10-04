@@ -9,7 +9,7 @@ $(document).ready(function () {
         $('.main').hide()
     }
 
-    pegipegi()
+    // pegipegi()
 
     $('#btn-register').on('click', function (e) {
         e.preventDefault()

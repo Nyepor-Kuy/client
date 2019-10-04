@@ -1,7 +1,22 @@
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
+
+
 function pegipegi() {
-  let from = $('#from').val()
-  let to = $('#to').val()
-  let date = $('#date').val()
+  let from = $('#from').val()|| 'CGK-sky'
+  let to = $('#to').val() || 'SUB-sky'
+  let date = $('#date').val() || '2019-10-05'
 
   Swal.fire({
     title: `Fetching data from server...`,
@@ -81,6 +96,9 @@ function flight(data) {
 
 
 function event(data) {
+  if ( data.events.length == 0 ){
+    $('.event').append(` <h1> NO event</h1>`)
+  } else {
   for (let i = 0; i < 3; i++) {
     let dateStart = new Date(data.events[i].start.local).toLocaleDateString()
     let dateEnd = new Date(data.events[i].end.local).toLocaleDateString()
@@ -108,6 +126,7 @@ function event(data) {
         </div>
     `)
   }
+}
 }
 
 function youtube(data) {
