@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="input">
-                        <input type="text" placeholder="Password" id="passwordRegis">
+                        <input type="password" placeholder="Password" id="passwordRegis">
                     </div>
 
                     <div class="input">
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="input">
-                        <input type="text" placeholder="Password" id="passwordLogin">
+                        <input type="password" placeholder="Password" id="passwordLogin">
                     </div>
                     <input type="submit" value="Sign In" id="btn-login">
                     <p>Don't have an PEGIPEGI KUY Account? Create <a href="#" id="toRegister">here</a></p>
@@ -69,16 +69,6 @@
 
         <div class="body">
             <div class="weather">
-                <div class="card m-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Weather</h5>
-                        <p class="card-text"><i class="fas fa-city"></i> City: Surabaya</p>
-                        <p class="card-text"><i class="fas fa-temperature-low"></i> Air temperature: 25°C</p>
-                        <p class="card-text"><i class="fas fa-cloud"></i> Cloud coverage: 13%</p>
-                        <p class="card-text"><i class="fas fa-wind"></i> Wind speed: 2.46 m/s</p>
-                        <p class="card-text"><i class="fas fa-tint"></i> Humidity: 77.1%</p>
-                    </div>
-                </div>
             </div>
 
             <div class="flight">
@@ -118,10 +108,10 @@
 
                     <div>
                         <label>Departure Date</label>
-                        <input type="date">
+                        <input type="date" id="date">
                     </div>
 
-                    <input type="submit" value="Search Flight">
+                    <input type="submit" value="Search Flight" id="btn-submit-flight">
                 </form>
 
                 <div class="card m-3">
@@ -148,36 +138,41 @@
             <div class="event">
                 <h1>Events In Your Destination</h1>
                 <div class="card m-3">
-                    <img id="event-img" class="card-img-top" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F72712535%2F314838640630%2F1%2Foriginal.20190913-064534?auto=compress&s=611740c781a402145abedfb83674c4cc" alt="Card image cap">
-                        <div class="card-body">
-                            <div id="header">
-                                <h5 class="card-title">German Cinema 2019</h5>
-                            </div>
-                            <div id="body">
-                                <p class="card-text">12 Films, 6 cities, 7 days: Experience the best recent German films on the big screen</p>
-                            </div>
-                            <div id="date" class="my-2">
-                                <small class="text-muted"><i class="fas fa-calendar-alt"></i> Start: 10/08/2019</small>
-                                <small class="text-muted"><i class="fas fa-calendar-alt"></i> End: 12/8/2019</small>
-                            </div>
-                            <div id="footer" class="mt-3">
-                                <a href="https://www.eventbrite.com/e/german-cinema-2019-tickets-72655834557?aff=ebapi" class="btn btn-primary">Books Your Tickets</a>
-                            </div>
-                    </div>              
+                    <img id="event-img" class="card-img-top"
+                        src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F72712535%2F314838640630%2F1%2Foriginal.20190913-064534?auto=compress&s=611740c781a402145abedfb83674c4cc"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <div id="header">
+                            <h5 class="card-title">German Cinema 2019</h5>
+                        </div>
+                        <div id="body">
+                            <p class="card-text">12 Films, 6 cities, 7 days: Experience the best recent German films on
+                                the big screen</p>
+                        </div>
+                        <div id="date" class="my-2">
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Start: 10/08/2019</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> End: 12/8/2019</small>
+                        </div>
+                        <div id="footer" class="mt-3">
+                            <a href="https://www.eventbrite.com/e/german-cinema-2019-tickets-72655834557?aff=ebapi"
+                                class="btn btn-primary">Books Your Tickets</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/5cd1e1d933.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="script/script.js"></script>
-    <script src="script/landingPage.js"></script>
-    <script src="script/login.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5cd1e1d933.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="script/script.js"></script>
+        <script src="script/landingPage.js"></script>
+        <script src="script/login.js"></script>
+        <script src="script/pegipegi.js"></script>
 
 </body>
 
