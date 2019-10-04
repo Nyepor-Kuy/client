@@ -25,17 +25,17 @@
                 <h1>Sign Up</h1>
                 <form>
                     <div class="input">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" id="nameRegis">
                     </div>
 
                     <div class="input">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Password" id="passwordRegis">
                     </div>
 
                     <div class="input">
-                        <input type="email" placeholder="Email">
+                        <input type="email" placeholder="Email" id="emailRegis">
                     </div>
-                    <input type="submit" value="Register">
+                    <input type="submit" value="Register" id="btn-register">
                 </form>
                 <p>Already have an PEGIPEGI KUY Account? Sign In <a href="#" id="toLogin">here</a></p>
             </div>
@@ -44,13 +44,13 @@
                 <h1>Sign In</h1>
                 <form>
                     <div class="input">
-                        <input type="email" placeholder="Email">
+                        <input type="email" placeholder="Email" id="emailLogin">
                     </div>
 
                     <div class="input">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Password" id="passwordLogin">
                     </div>
-                    <input type="submit" value="Sign In">
+                    <input type="submit" value="Sign In" id="btn-login">
                     <p>Don't have an PEGIPEGI KUY Account? Create <a href="#" id="toRegister">here</a></p>
                     <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 </form>
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Main Page -->
-    <div class="main">
+    <div class="main" style="display: none">
         <div class="nav">
             <img src="src/logo.png" alt="Logo">
             <div>
@@ -178,17 +178,7 @@
     <script src="script/script.js"></script>
     <script src="script/landingPage.js"></script>
     <script src="script/login.js"></script>
-    <script>
-        function signOut() {
-            if (gapi.auth2) {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                });
-            }
-            console.log('User signed out.');
-        }
-    </script>
+
 </body>
 
 </html>
