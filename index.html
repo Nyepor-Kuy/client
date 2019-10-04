@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id"
+        content="225874358535-a8792ake5si2rg8bblgq2l8je3cv5a30.apps.googleusercontent.com">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>PEGIPEGI KUY</title>
+</head>
+
+<body>
+    <!-- landing page -->
+    <div class="landingPage" style="display: none">
+        <div class="logo">
+            <h1>PEGIPEGI</h1>
+            <h1>K U Y</h1>
+        </div>
+        <div class="account">
+            <div class="register-box" style="display: none">
+                <h1>Sign Up</h1>
+                <form>
+                    <div class="input">
+                        <input type="text" placeholder="Name" id="nameRegis">
+                    </div>
+
+                    <div class="input">
+                        <input type="password" placeholder="Password" id="passwordRegis">
+                    </div>
+
+                    <div class="input">
+                        <input type="email" placeholder="Email" id="emailRegis">
+                    </div>
+                    <input type="submit" value="Register" id="btn-register">
+                </form>
+                <p>Already have an PEGIPEGI KUY Account? Sign In <a href="#" id="toLogin">here</a></p>
+            </div>
+
+            <div class="login-box">
+                <h1>Sign In</h1>
+                <form>
+                    <div class="input">
+                        <input type="email" placeholder="Email" id="emailLogin">
+                    </div>
+
+                    <div class="input">
+                        <input type="password" placeholder="Password" id="passwordLogin">
+                    </div>
+                    <input type="submit" value="Sign In" id="btn-login">
+                    <p>Don't have an PEGIPEGI KUY Account? Create <a href="#" id="toRegister">here</a></p>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div class="main" style="display: none">
+        <div class="nav">
+            <img src="src/logo.png" alt="Logo">
+            <div>
+                <a href="#" onclick="signOut()">Sign out</a>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="weather">
+            </div>
+
+            <div class="flight">
+                <h1>Find Flights</h1>
+                <form class="m-2">
+                    <div class="row m-2">
+
+                        <div class="col">
+                            <div class="from form-group">
+                                <label>FROM</label>
+                                <select id="from" class="form-control form-control-lg">
+                                    <option value="Jakarta" selected>Jakarta</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                    <option value="Medan">Medan</option>
+                                    <option value="Palembang">Palembang</option>
+                                    <option value="Lampung">Lampung</option>
+                                    <option value="Makassar">Makassar</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Bandung">Bali</option>
+                                    <option value="Semarang">Semarang</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="to">
+                                <label>TO</label>
+                                <select id="to" class="form-control form-control-lg">
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Surabaya" selected>Surabaya</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                    <option value="Medan">Medan</option>
+                                    <option value="Palembang">Palembang</option>
+                                    <option value="Lampung">Lampung</option>
+                                    <option value="Makassar">Makassar</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Bandung">Bali</option>
+                                    <option value="Semarang">Semarang</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <div class="col">
+                            <label>Departure Date</label>
+                            <input type="date" id="date" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>Kuy Travelling!</label>
+                            <input type="submit" class="btn btn-primary m-1" id="btn-submit-flight"
+                                value="Search Flight"></input>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="price-box">
+
+                </div>
+
+            </div>
+
+            <div class="event">
+                <h1>Events</h1>
+            </div>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5cd1e1d933.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="script/script.js"></script>
+        <script src="script/landingPage.js"></script>
+        <script src="script/login.js"></script>
+        <script src="script/pegipegi.js"></script>
+
+</body>
+
+</html>
