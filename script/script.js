@@ -19,4 +19,9 @@ $(document).ready(function () {
         getLogin()
 
     })
+
+    $('#btn-submit-flight').on('click', function (e) {
+        e.preventDefault()
+        pegipegi()
+    })
 })
