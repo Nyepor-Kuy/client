@@ -22,9 +22,10 @@ function pegipegi() {
       $('.weather').empty()
       $('#price-box').empty()
       console.log(response)
-      weather(response.weather.hours[0], response.flight.Places[1].CityName)
+      weather(response.weather.hours[0], to)
       flight(response.flight)
       event(response.event)
+      youtube(response.youtube)
       Swal.close()
     })
     .fail((err) => {
@@ -78,8 +79,8 @@ function flight(data) {
   }
 }
 
-function event(data) {
 
+function event(data) {
   for (let i = 0; i < 3; i++) {
     let dateStart = new Date(data.events[i].start.local).toLocaleDateString()
     let dateEnd = new Date(data.events[i].end.local).toLocaleDateString()
@@ -107,4 +108,13 @@ function event(data) {
         </div>
     `)
   }
+}
+
+function youtube(data) {
+  console.log(data.items[0].id.videoId)
+  $('.weather').append(`
+    <div id="youtube">              
+      <iframe src="https://www.youtube.com/embed/${data.items[0].id.videoId}" frameborder="0"></iframe>
+    </div>
+  `)
 }

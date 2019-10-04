@@ -9,6 +9,8 @@ $(document).ready(function () {
         $('.main').hide()
     }
 
+    pegipegi()
+
     $('#btn-register').on('click', function (e) {
         e.preventDefault()
         getRegister()
